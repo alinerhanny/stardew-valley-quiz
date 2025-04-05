@@ -21,7 +21,15 @@ let currentSeasonIndex = 0
 document.addEventListener('DOMContentLoaded', () => {
     bgMusic.volume = 0.3
 
-    bgMusic.play()
+    // Pausa a música ao carregar e configura o botão de som como "mutado"
+    bgMusic.pause(); // Garantir que a música comece pausada
+    musicControl.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Configura o botão como mutado inicialmente
+
+    // Carregar a estação salva do localStorage (se houver)
+    const savedSeason = localStorage.getItem('season')
+    if (savedSeason) {
+        currentSeasonIndex = seasons.findIndex(season => season.name === savedSeason)
+    }
 
     applySeason(currentSeasonIndex)
 })
@@ -51,6 +59,8 @@ musicControl.addEventListener('click', () => {
 startBtn.addEventListener('click', (e) => {
     e.preventDefault()
     playClickSound()
+
+    document.body.classList.add('fade-out');
 
     localStorage.setItem('season', seasons[currentSeasonIndex].name)
     localStorage.setItem('musicTime', bgMusic.currentTime);
