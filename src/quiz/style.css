@@ -249,6 +249,11 @@ body {
     box-shadow: 0 2px 0 #8F4A23;
 }
 
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
 /* Classes de tema para o body */
 body.verao { background-image: url('../img/montanhas-verao.jpg'); }
 body.outono { background-image: url('../img/montanhas-outono.png'); }
