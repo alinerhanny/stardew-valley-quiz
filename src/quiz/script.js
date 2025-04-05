@@ -171,7 +171,7 @@ function finalizarJogo() {
     conteudoFinal.style.display = 'flex';
     
     document.querySelector('.botao-reiniciar').onclick = reiniciarQuiz;
-    document.querySelector('.botao-inicio').onclick = () => window.location.href = './index.html';
+    document.querySelector('.botao-inicio').onclick = () => window.location.href = '../../index.html';
 }
 
 /**
