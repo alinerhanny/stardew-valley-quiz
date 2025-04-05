@@ -17,6 +17,7 @@ body {
     padding: 60px;
     opacity: 0;
     animation: bodyFadeIn 1s ease-out forwards;
+    transition: background-image 1s ease; 
 }
 
 @keyframes bodyFadeIn {
@@ -159,6 +160,11 @@ p {
     font-size: 24px;
     color: #5a2d0b;
 }
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
 
 /* Classes de estação */
 .spring-bg {
