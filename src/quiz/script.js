@@ -39,6 +39,10 @@ const temas = {
  * =============================================
  */
 document.addEventListener('DOMContentLoaded', function() {
+
+    const quizContainer = document.querySelector('.questionario');
+    quizContainer.classList.add('fade-in'); 
+    
     // Carrega o estado do tema e música salvos no localStorage
     const temaSalvo = localStorage.getItem('season') || 'fall';
     const musicaStatus = localStorage.getItem('musicStatus') || 'on'; // 'on' ou 'off'
