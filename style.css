@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('src/img/montanhas-verao.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px;
+    opacity: 0;
+    animation: bodyFadeIn 1s ease-out forwards;
+}
+
+@keyframes bodyFadeIn {
+    to { opacity: 1; }
+}
+
+section {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo {
+    width: 800px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s 0.2s ease-out forwards;
+}
+
+p { 
+    margin-top: 30px;
+    color: #AC400C;
+    font-size: 24px;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s 0.4s ease-out forwards;
+}
+
+.galinha {
+    width: 40px;
+    height: 40px;
+}
+
+.iniciarBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 40px;
+    border-radius: 16px;
+    border: 5px solid #BD6033;
+    background: #FFD688;
+    color: #C7524F;
+    font-size: 26px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease-out;
+    box-shadow: 0 4px 0 #8F4A23, 0 5px 10px rgba(0, 0, 0, 0.25);
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+    background-image: linear-gradient(to bottom, #FFD688 0%, #F5C97E 50%, #E8B865 100%);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s 0.6s ease-out forwards;
+}
+
+.iniciarBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #8F4A23, 0 8px 15px rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(to bottom, #FFE0A3 0%, #F5D089 50%, #E8C170 100%);
+}
+
+.iniciarBtn:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #8F4A23;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.iniciarBtn:hover .galinha {
+    animation: chicken-nod 0.6s ease-in-out infinite;
+}
+
+@keyframes chicken-nod {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-4px) scale(1.05); }
+}
+
+/* Controle de Música */
+.music-control {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 214, 136, 0.7);
+    border: 3px solid #BD6033;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s;
+    box-shadow: 0 2px 0 #8F4A23;
+}
+
+.music-control i {
+    font-size: 24px;
+    color: #5a2d0b;
+}
+
+.music-control:hover .season-control:hover {
+    transform: scale(1.1) rotate(10deg);
+    background: rgba(255, 224, 163, 0.9);
+}
+
+#musicControl, #seasonControl {
+    transition: transform 0.3s ease;
+}
+
+/* Controle de Estações */
+.season-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 214, 136, 0.7);
+    border: 3px solid #BD6033;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s;
+    box-shadow: 0 2px 0 #8F4A23;
+}
+
+.season-control i {
+    font-size: 24px;
+    color: #5a2d0b;
+}
+
+/* Classes de estação */
+.spring-bg {
+    background-image: url('src/img/montanhas-primavera.png');
+}
+
+.summer-bg {
+    background-image: url('src/img/montanhas-verao.jpg');
+}
+
+.fall-bg {
+    background-image: url('src/img/montanhas-outono.png');
+}
+
+.winter-bg {
+    background-image: url('src/img/montanhas-inverno.png');
+}
+
+
+

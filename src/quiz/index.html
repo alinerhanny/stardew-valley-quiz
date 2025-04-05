@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stardew Valley Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="../img/galinha.png" type="image/x-icon">
+</head>
+<body>
+
+    <button id="botao-som" class="controle-som">
+        <i class="fas fa-music"></i>
+    </button>
+    
+    <audio id="musica-fundo" loop>
+        <source src="../audio/musica-tema.mp3" type="audio/mpeg">
+    </audio>
+    
+
+      <div class="conteudo-jogo">
+        <section class="questionario">
+            <div class="recompensa-container">
+                <div class="recompensa-ouro">
+                  <span class="ouro-contador">0</span>
+                  <img src="https://cdn-icons-png.flaticon.com/512/272/272525.png" alt="Moedas de ouro" class="ouro-icone">
+                </div>
+              </div>
+          <div class="conteudo">
+            <span class="progresso"></span>
+            <span class="pergunta"></span>
+            <div class="respostas"></div>
+          </div>
+          </div>
+        </section>
+      </div>
+
+    <audio id="som-moeda" src="https://assets.mixkit.co/active_storage/sfx/1939/1939-preview.mp3" preload="auto"></audio>
+    <audio id="som-acerto" src="https://assets.mixkit.co/active_storage/sfx/221/221-preview.mp3" preload="auto"></audio>
+    <audio id="som-erro" src="https://assets.mixkit.co/active_storage/sfx/946/946-preview.mp3" preload="auto"></audio>
+
+    <div class="fim">
+        <div class="resultado-container">
+          <h2>Quiz Concluído!</h2>
+          
+          <div class="resultado-frase" id="frase-resultado"></div>
+          
+          <div class="resultado-detalhes">
+            <p>Você acertou <span id="acertos-total">0</span> de <span id="total-perguntas">0</span></p>
+            <div class="ouro-final">
+              <img src="https://cdn-icons-png.flaticon.com/512/272/272525.png" alt="Moedas" class="ouro-icone">
+              <span id="ouro-total">0</span> moedas
+            </div>
+          </div>
+          
+          <div class="botoes-final">
+            <button class="botao-reiniciar">Jogar Novamente</button>
+            <button class="botao-inicio">Voltar ao Início</button>
+          </div>
+        </div>
+      </div>
+
+    <script src="perguntas.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

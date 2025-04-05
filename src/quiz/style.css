@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/montanhas-outono.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.conteudo-jogo {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionario {
+    width: 70vw;
+    background: rgba(217, 217, 217, 0.23);
+    border-radius: 16px;
+    border: 5px solid #B67758;
+    color: #AC400C;
+    padding: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+.pergunta {
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.respostas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 60px;
+    gap: 12px;
+}
+
+.botao-resposta {
+    padding: 15px;
+    background-color: #FFD688;
+    border: 3px solid #AC400C;
+    border-radius: 16px;
+    font-size: 18px;
+    color: #AC400C;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.botao-resposta:hover {
+    background-color: #FFC358;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: #8A3009;
+}
+
+.botao-resposta:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progresso {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 18px;
+    color: #AC400C;
+    background-color: #FFD688;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid #B67758;
+}
+
+.botao-resposta.resposta-certa {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #2E7D32;
+}
+
+.botao-resposta.resposta-errada {
+    background-color: #F44336;
+    color: white;
+    border-color: #C62828;
+}
+
+.recompensa-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  .recompensa-ouro {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FFD688;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 3px solid #AC400C;
+  }
+  
+  .ouro-contador {
+    font-size: 20px;
+    color: #AC400C;
+    font-weight: bold;
+  }
+  
+  .ouro-icone {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Animação de ganho de ouro */
+
+  @keyframes ganho-ouro {
+     0% { transform: scale(1); }
+      25% { transform: scale(1.3) rotate(15deg); }
+     50% { transform: scale(1.5) rotate(-15deg); }
+     75% { transform: scale(1.3) rotate(10deg); }
+     100% { transform: scale(1) rotate(0); }
+ }
+
+  
+  .ganho-ouro {
+    animation: ganho-ouro 0.5s ease-in-out;
+  }
+
+  /* Estilos para a tela final */
+.fim {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .resultado-container {
+    background: rgba(217, 217, 217, 0.9);
+    border-radius: 16px;
+    border: 5px solid #B67758;
+    color: #AC400C;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+  }
+  
+  .resultado-frase {
+    font-size: 24px;
+    margin: 20px 0;
+    min-height: 60px;
+    font-weight: bold;
+    color: #8A3009;
+  }
+  
+  .resultado-detalhes {
+    background-color: #FFD688;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 3px solid #AC400C;
+  }
+  
+  .ouro-final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+  
+  .ouro-final img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .botoes-final {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .botao-reiniciar, .botao-inicio {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .botao-reiniciar {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .botao-inicio {
+    background-color: #B67758;
+    color: white;
+  }
+  
+  .botao-reiniciar:hover {
+    background-color: #3e8e41;
+    transform: translateY(-2px);
+  }
+  
+  .botao-inicio:hover {
+    background-color: #9C5F3D;
+    transform: translateY(-2px);
+  }
+
+  .controle-som {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 214, 136, 0.7);
+    border: 3px solid #AC400C;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    color: #AC400C;
+    font-size: 20px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 0 #8F4A23;
+}
+
+/* Classes de tema para o body */
+body.verao { background-image: url('../img/montanhas-verao.jpg'); }
+body.outono { background-image: url('../img/montanhas-outono.png'); }
+body.inverno { background-image: url('../img/montanhas-inverno.png'); }
+body.primavera { background-image: url('../img/montanhas-primavera.png'); }
