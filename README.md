@@ -1,8 +1,8 @@
 # 🌟 Stardew Valley Quiz
 ⚠️ Aviso: Este é um projeto fan-made (feito por fã) e não tem qualquer ligação oficial com a ConcernedApe ou o jogo Stardew Valley.
 
-![tela inicial](src/img/tela-inicial)
-![tela quiz](src/img/tela-quiz)
+![tela inicial](src/img/tela-inicial.png)
+![tela quiz](src/img/tela-quiz.png)
 
 ## 📌 Sobre o Projeto
 Um quiz temático sobre Stardew Valley com:
